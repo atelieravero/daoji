@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Menu, X, Globe } from "lucide-react";
+import './globals.css'; // Add this line to import global styles
 
 // Consolidated Navbar Component
 function Navbar() {
@@ -133,16 +134,18 @@ export default function RootLayout({
   children?: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col min-h-screen font-sans bg-gray-50 text-gray-900">
-      <Navbar />
-      <main className="flex-grow w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {children || (
-          <div className="text-center py-20 text-gray-500 border-2 border-dashed border-gray-200 rounded-xl">
-            <p>Your layout shell is ready. Page content will be rendered here.</p>
-          </div>
-        )}
-      </main>
-      <Footer />
-    </div>
+    <html lang="en">
+      <body className="flex flex-col min-h-screen font-sans bg-gray-50 text-gray-900">
+        <Navbar />
+        <main className="flex-grow w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          {children || (
+            <div className="text-center py-20 text-gray-500 border-2 border-dashed border-gray-200 rounded-xl">
+              <p>Your layout shell is ready. Page content will be rendered here.</p>
+            </div>
+          )}
+        </main>
+        <Footer />
+      </body>
+    </html>
   );
 }
