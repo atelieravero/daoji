@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
+// import Link from "next/link"; // Temporarily removed to prevent alias resolution issues
 import { Menu, X, Globe } from "lucide-react";
 
 export default function Navbar() {
@@ -18,14 +19,12 @@ export default function Navbar() {
     <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          {/* Logo / Brand */}
           <div className="flex items-center">
             <a href="/" className="text-xl font-bold tracking-tight text-gray-900">
               Daoji <span className="text-blue-600">CMS</span>
             </a>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
@@ -37,7 +36,6 @@ export default function Navbar() {
               </a>
             ))}
 
-            {/* Language Switcher (Desktop) */}
             <div className="relative">
               <button
                 onClick={() => setLangOpen(!langOpen)}
@@ -57,7 +55,6 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile menu button */}
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -69,7 +66,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden border-t border-gray-200 bg-white">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -84,7 +80,6 @@ export default function Navbar() {
               </a>
             ))}
             
-            {/* Mobile Language Options */}
             <div className="border-t border-gray-200 mt-2 pt-2 px-3">
               <div className="flex space-x-4 text-sm font-medium text-gray-600">
                 <button className="hover:text-blue-600 underline">EN</button>
